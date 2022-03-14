@@ -1,0 +1,22 @@
+.title{
+    margin: 0;
+}
+
+.mainHeader{
+    @include flexy($dir:column);
+
+    button{
+        width: 5em;
+        border: none;
+        padding: 5px;
+        border-radius: 3px;
+        margin: 5px;
+        cursor: pointer;
+        &:hover{
+            transform: scale(0.99);
+        }
+        &:active{
+            transform: scale(1.01);
+        }
+    }
+}
