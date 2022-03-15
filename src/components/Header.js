@@ -1,19 +1,25 @@
+import PropTypes from 'prop-types'
+import { useLocation } from 'react-router-dom'
 import Button from './Button'
 
-const Header = ({title}) => {
+const Header = ({title, onAdd, showAdd}) => {
+  const location = useLocation();
+  
   return (
     <header className='mainHeader'>
         <h1 className="title">{title}</h1>
         {/* <h1 style={headingStyle} className="title">{title}</h1> */}
-        <Button color='green' text='Hello!' />
-        <Button color='steelblue' text='Hello 1!' />
-        <Button color='yellow' text='Hello 3!' />
+        {location.pathname === '/' && <Button color={showAdd ? 'orange' : 'green'} text={showAdd ? 'Close' : 'Add'} onClick={onAdd} />}
     </header>
   )
 }
 
 Header.defaultProps = {
   title: 'Task Tracker',
+}
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 //CSS in JS

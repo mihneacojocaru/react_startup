@@ -351,7 +351,6 @@ html, body {
 }
 
 body {
-  display: grid;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -367,9 +366,21 @@ li {
   margin: 0;
 }
 
+.App {
+  max-width: 500px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+
 .mainHeader {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 .mainHeader button {
   width: 5em;
@@ -384,6 +395,70 @@ li {
 }
 .mainHeader button:active {
   transform: scale(1.01);
+}
+
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.task h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.add-form {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.add-form .form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.add-form * {
+  padding: 3px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+footer {
+  padding: 2em 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
